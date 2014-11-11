@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menus"
+        android:icon="@drawable/more"
+        android:showAsAction="always"
+        android:title="menu">
+        <menu>
+            <item
+                android:id="@+id/browser"
+                android:icon="@drawable/boroeser"
+                android:showAsAction="always"
+                android:title="open in browser"/>
+            <item
+                android:id="@+id/save"
+                android:icon="@drawable/save"
+                android:showAsAction="ifRoom"
+                android:title="save in history"/>
+            <item
+                android:id="@+id/camera"
+                android:icon="@drawable/camera"
+                android:showAsAction="ifRoom"
+                android:title="camera capture"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/share"
+        android:showAsAction="always"/>
+    <item
+        android:id="@+id/close"
+        android:icon="@drawable/close"
+        android:showAsAction="always"/>
+
+</menu>

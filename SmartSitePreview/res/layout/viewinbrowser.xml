@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#B40404"
+  >
+
+    <EditText
+        android:id="@+id/urladress"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="25sp"
+        android:text="http://www.example.com"
+        android:textColor="#B40404"
+        android:background="@android:color/white"
+        android:layout_marginRight="40dp"
+        android:inputType="textUri" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/go"
+        android:layout_alignParentRight="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/sea" />
+
+</RelativeLayout>

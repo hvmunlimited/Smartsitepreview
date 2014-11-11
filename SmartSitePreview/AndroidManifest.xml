@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.siliconorchard.url.site.preview.browser"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+      <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+          <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+         <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="android.permission.BACKUP_DATA"/>       
+    <application
+        
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:largeHeap="true"
+        android:hardwareAccelerated="true"
+        android:allowBackup="true" >
+        <activity
+            android:name="com.siliconorchard.url.site.preview.browser.MainActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:name="com.siliconorchard.url.site.preview.browser.PreviewActivity"
+            android:label="@string/app_name" 
+            android:theme="@style/ThemeWithCorners">
+          
+              <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:scheme="about" />
+                <data android:scheme="javascript" />
+            </intent-filter>
+            <!--  For these schemes where any of these particular MIME types
+                  have been supplied, we are a good candidate. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:scheme="inline" />
+                <data android:mimeType="text/html"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="application/xhtml+xml"/>
+                <data android:mimeType="application/vnd.wap.xhtml+xml"/>
+            </intent-filter>
+            <!-- We are also the main entry point of the browser. -->
+        
+          
+            <intent-filter android:label="Map In Browser">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.item/postal-address" />
+            </intent-filter>
+          
+            <intent-filter>
+                <action android:name="android.intent.action.WEB_SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+           
+         <activity
+            android:name="com.siliconorchard.url.site.preview.browser.ui.AndroidCustomGalleryActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"></activity>
+            <activity
+            android:name="com.siliconorchard.url.site.preview.browser.ui.HistoryActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar">   </activity>
+             <activity
+            android:name="com.siliconorchard.url.site.preview.browser.ui.PreviewGallery"
+            android:label="@string/app_name" 
+                android:theme="@style/ThemeWithCorners"> </activity>
+                    <activity
+            android:name="com.siliconorchard.url.site.preview.browser.ui.PreviewImage"
+            android:label="@string/app_name" 
+            > 
+        </activity>
+         <activity
+            android:name="com.siliconorchard.url.site.preview.browser.ui.PreviewfileImage"
+            android:label="@string/app_name" > 
+        </activity>
+          <activity
+            android:name="com.siliconorchard.url.site.preview.browser.ui.SettingsActivity"
+            android:label="Settings"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.NoActionBar" > 
+        </activity>
+            <activity
+            android:name="com.siliconorchard.url.site.preview.browser.ui.OpenurlActivity"
+            android:label="Paste the webadress"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.NoActionBar" > 
+        </activity>
+          <activity
+            android:name="com.siliconorchard.url.site.preview.browser.ui.HowtouseActivity"
+           
+             android:label="@string/app_name" > 
+        </activity>
+    </application>
+
+</manifest>
